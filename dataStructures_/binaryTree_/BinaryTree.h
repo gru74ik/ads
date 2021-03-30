@@ -4,7 +4,6 @@
 #include <iostream>
 #include <cstddef>
 #include <string>
-#include <functional>
 
 template<typename T>
 class BinaryTree
