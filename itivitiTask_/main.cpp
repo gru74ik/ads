@@ -1,3 +1,6 @@
+// В заданном массиве целых чисел найти подмассив с максимальной суммой значений
+// элементов и в качестве ответа вывести границы (индексы) этого подмассива.
+
 #include <iostream>
 #include <vector>
 #include <utility>
@@ -54,9 +57,9 @@ public:
             }
             std::cout
                 << "expected: ["
-                << m_expected[i].first << " ,"
+                << m_expected[i].first << ", "
                 << m_expected[i].second << "], actual: "
-                << "[" << actual.first << " ," << actual.second << "]\n";
+                << "[" << actual.first << ", " << actual.second << "]\n";
             ++i;
         }
     }
