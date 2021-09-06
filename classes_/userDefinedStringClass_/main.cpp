@@ -53,6 +53,17 @@ namespace rek
             return os;
         }
 
+        const char & operator[](size_t index) const {
+            if (index >= m_size) {
+                throw std::out_of_range {"Index too large: " + std::to_string(index)};
+            }
+            return m_data[index];
+        }
+
+        char & operator[](size_t index) {
+            return const_cast<char &>(std::as_const(*this)[index]);
+        }
+
     private:
         char* m_data;
         std::size_t m_size;
@@ -69,5 +80,6 @@ int main() {
     rek::string str3(std::move(str1));
     std::cout << str3;
 
-    str2 = std::move(str1);
+    str3[0] = '7';
+    std::cout << str3[0] << "\n\n";
 }
