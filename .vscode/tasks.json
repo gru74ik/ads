@@ -28,7 +28,7 @@
         {
             "type": "shell",
             "label": "g++ build active file",
-            "command": "/usr/bin/g++-10",
+            "command": "/usr/bin/g++-11",
             "args": [
                 "-g",
                 "-std=c++20",
