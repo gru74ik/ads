@@ -8,17 +8,18 @@
 
 #include <iostream>
 #include <cstddef>
-#include <unordered_set>
+#include <set>
 #include <vector>
 #include <string>
 #include <algorithm>
 #include <utility>
+#include <iterator>
 
 std::size_t count_max_consecutive_repeating_char(const std::string & str) {
     if (str.empty()) { return 0; }
     if (str.size() == 1) { return 1; }
     
-    std::unordered_set<std::size_t> res;
+    std::set<std::size_t> res;
     std::size_t counter = 0;
     
     for (char consec_repeat_char = str.front(); const auto ch : str) {
@@ -33,7 +34,7 @@ std::size_t count_max_consecutive_repeating_char(const std::string & str) {
     }
     res.insert(counter);
 
-    return *std::max_element(res.begin(), res.end());
+    return *( std::prev(res.end(), 1) );
 }
 
 class Test
