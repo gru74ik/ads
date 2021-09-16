@@ -13,7 +13,6 @@
 #include <string>
 #include <algorithm>
 #include <utility>
-#include <iterator>
 
 std::size_t count_max_consecutive_repeating_char(const std::string & str) {
     if (str.empty()) { return 0; }
@@ -34,7 +33,7 @@ std::size_t count_max_consecutive_repeating_char(const std::string & str) {
     }
     res.insert(counter);
 
-    return *( std::prev(res.end(), 1) );
+    return *res.rbegin();
 }
 
 class Test
