@@ -12,10 +12,11 @@ auto matches(const R& range, Ts ... ts)
 }
 
 int main() {
-    std::vector<int> v {1, 2, 3, 4, 5};
+    std::vector<int> ivec {1, 2, 3, 4, 5};
     std::cout
-        << "matches(v, 2, 5) returns " << matches(v, 2, 5) << std::endl // returns 2 
-        << "matches(v, 100, 200) returns " << matches(v, 100, 200) << std::endl // returns 0
-        << "matches(\"abcdefg\", 'x') returns " << matches("abcdefg", 'x') << std::endl // returns 0
-        << "matches(\"abcdefg\", 'a', 'd', 'f') returns " << matches("abcdefg", 'a', 'd', 'f') << std::endl; // returns 3
+        << "matches(ivec, 2, 5) returns " << matches(ivec, 2, 5) // returns 2 
+        << "\nmatches(ivec, 100, 200) returns " << matches(ivec, 100, 200) // returns 0
+        << "\nmatches(\"abcdef\", 'x') returns " << matches("abcdef", 'x') // returns 0
+        << "\nmatches(\"kisses\", 's') returns " << matches("kisses", 's') // returns 3
+        << "\n";
 }
