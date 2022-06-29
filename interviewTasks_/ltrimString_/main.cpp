@@ -1,11 +1,17 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 #include <algorithm>
 
-// This function trims leading spaces in given string
-std::string ltrim(std::string & s) {
-    // using remove-erase idiom:
-    s.erase(std::remove(s.begin(), s.end(),' '), s.end());
+std::string ltrim(std::string &s) {
+    s.erase(
+        s.begin(),
+        std::find_if(
+            s.begin(),
+            s.end(),
+            [](char ch) { return !std::isspace(ch); }
+        )
+    );
     return s;
 }
 
@@ -18,7 +24,7 @@ void print(const T & sequence, const std::string & delimiter) {
 }
 
 int main() {
-    std::string s("      1234");
+    std::string s(" 1234");
     std::cout << "s.size(): " << s.size() << '\n';
     print(s, "");
     std::cout << "ltrim(s).size(): " << ltrim(s).size() << '\n';
